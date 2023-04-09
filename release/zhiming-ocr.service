@@ -4,7 +4,7 @@ Description=ZhiMing OCR Plugin Backend
 [Service]
 User=www
 Group=www
-Type=notify
+#Type=notify
 WorkingDirectory=/home/www/ZhiMing/plugins/zhiming-ocr
 ExecStart=/usr/local/bin/uvicorn main:app --port 65533
 # Restart=on-failure
