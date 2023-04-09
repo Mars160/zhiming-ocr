@@ -1,0 +1,18 @@
+[Unit]
+Description=ZhiMing OCR Plugin Backend
+
+[Service]
+User=www
+Group=www
+Type=notify
+WorkingDirectory=/home/www/ZhiMing/plugins/zhiming-ocr
+ExecStart=/usr/local/bin/uvicorn main:app --port 65533
+# Restart=on-failure
+PIDFile=/home/www/ZhiMing/plugins/ocr.pid
+KillSignal=SIGQUIT
+Restart=always
+NotifyAccess=all
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
